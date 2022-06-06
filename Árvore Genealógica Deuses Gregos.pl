@@ -1,3 +1,4 @@
+%Regras de parentesco da mitologia Grega
 parent(caos, eros).
 parent(caos, tártaro).
 parent(caos, gaia).
@@ -165,6 +166,8 @@ parent(afrodite, eros).
 parent(hermes, hermafrodite).
 parent(afrodite, hermafrodite).
 
+
+%o que cada deus representa na mitologia Grega
 god(caos, vazio).
 god(eros, amor).
 god(tártaro, personificação_do_mundo_inferior).
@@ -179,7 +182,7 @@ god(métis, saúde).
 god(selene, lua).
 god(poseidon, mares_e_rios).
 god(deméter, agricultura).
-god(zeus, trovão_e_céus_e_raio).
+god(zeus, trovão_céus_e_raio).
 god(hera, fertilidade_e_casamento).
 god(hades, mortos).
 god(héstia, fogo_sagrado).
@@ -206,6 +209,7 @@ god(eros, amor).
 god(hermafrodite, androgenia).
 god(chronos, tempo).
 
+%Personagens da mitologia grega que não são deuses
 nameis(tifão, gigante).
 nameis(ciclopes, ciclopes).
 nameis(hecatônquiros, hecatônquiros).
@@ -255,13 +259,13 @@ nameis(belerofonte, herói).
 nameis(perseu, herói).
 nameis(hércules, herói).
 nameis(minos, semideus).
-
 nome(tritão, rei_dos_mares).
 nome(helena, mulher_mais_bela_do_mundo).
 nome(palas, filha_de_tritão).
 nome(hélio, personificação_do_sol).
 nome(anfitrite, rainha_dos_oceanos).
 
+%deuses do olímpo
 olimpois(zeus).
 olimpois(hera).
 olimpois(poseidon).
@@ -275,10 +279,12 @@ olimpois(afrodite).
 olimpois(hermes).
 olimpois(dionísio).
 
+%deusas horais
 horais(diké).
 horais(eunomia).
 horais(irene).
 
+%deuses primordiais da mitologia grega
 primordialis(caos).
 primordialis(gaia).
 primordialis(tártaro).
@@ -291,10 +297,21 @@ primordialis(ponto).
 primordialis(urano).
 primordialis(óreas).
 
-tem_filhos_com(X,Y) :-
+
+%Regra de amantes
+tem_filhos_com_a(X,Y) :-
 parent(X,F), parent(Y,F), Y \== X.
 
+lista_tem_filhos_com(X, Filhos) :-
+	setof(Y, tem_filhos_com_a(X,Y), Filhos);	%Lista que exclui duplicados 
+	Filhos = none.
 
+tem_filhos_com(X, Y) :- 
+	lista_tem_filhos_com(X, Filhos),
+	member(Y, Filhos).
+%Fim
+
+%Regra de filhos2
 filho_de(X,Y) :-
 	parent(X, Y).
 
@@ -304,19 +321,25 @@ filhos_de(X, Filhos) :-
 
 filhos_de(X, Filhos) :-
 	not(setof(Y, parent(X,Y), Filhos)),		
-	Filhos = unknown.	
+	Filhos = unknown.
+%Fim
 
-pai_de(X, Y) :-
+
+%Regra de Pais
+pais_de(X, Y) :-
     parent(Y, X).
 
-pais_de(X, Pais) :-
+lista_pais_de(X, Pais) :-
 	setof(Y, parent(Y, X), Pais),
 	!.
 
-pais_de(X, Pais) :-
+lista_pais_de(X, Pais) :-
 	not(setof(Y, parent(Y, X), Pais)),		
 	Pais = unknown.
+%Fim
 
+
+%Regra de Irmãos
 irmaos_a(X, Y) :- %vem duplicado
 	parent(Z, X),
 	parent(Z, Y),
@@ -329,7 +352,9 @@ lista_de_irmaos(X, Irmaos) :-
 irmaos(X, Y) :- % funciona do jeito certo kkk
 	lista_de_irmaos(X, Irmaos),
 	member(Y, Irmaos).
+%Fim
 
+%Regra de ancestrais
 ancestral(X, Y) :-
     parent(X, Y).
 
@@ -340,24 +365,32 @@ ancestral(X, Y) :-
 
 ancestrais(X, Ancestral_de) :-
     findall(A, ancestral(X, A), Ancestral_de).
+%Fim
 
+%Regra que mostra o título do personagem da mitologia grega
 sobre(X) :-
     god(X, Y),
-	format("~w é o(a) deus(a) do(a) ~w", [X, Y]), nl.
+	format("Sobre: ~w é o(a) deus(a) do(a) ~w", [X, Y]), nl.
 
 sobre(X) :-
 	nameis(X, Y),
-	format("~w é um/uma ~w", [X, Y]), nl.
+	format("Sobre: ~w é um/uma ~w", [X, Y]), nl.
 
 sobre(X) :-
 	nome(X, Y),
-	format("~w é o/a ~w", [X, Y]), nl.
+	format("Sobre: ~w é o/a ~w", [X, Y]), nl.
+%Fim
 
+%Regra que mostra todas as informações sobre o personagem da mitologia grega
 info(X) :-
+    sobre(X),
 	pais_de(X, Pais),
 	format("Pais: ~w", [Pais]), nl, 
 	filhos_de(X, Filhos),
 	format("Filhos: ~w", [Filhos]), nl,
 	lista_de_irmaos(X, Irmaos),
 	format("Irmaos: ~w", [Irmaos]), nl,
+    lista_tem_filhos_com(X, Amantes),
+	format("Amantes: ~w", [Amantes]), nl,
 	!.
+%Fim.
