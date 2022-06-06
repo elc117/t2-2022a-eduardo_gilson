@@ -3,9 +3,7 @@ O trabalho consiste na criação de um banco de regras que estruturam a árvore 
 
 
 ### Exemplos de Aplicação
-  `parent(caos, X).`: Resulta nos filhos de caos. O que aconteceria se no lugar de caos fosse X e no lugar de X algum outro deus?  
-
-&nbsp;
+`parent(caos, X).`: Resulta nos filhos de caos. O que aconteceria se no lugar de caos fosse X e no lugar de X algum outro deus?  \\
 `god(X, noite).`: Resulta no nome do deus da noite.
 
 ### Exercício Proposto
