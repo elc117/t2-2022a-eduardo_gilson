@@ -3,8 +3,10 @@ O trabalho consiste na criação de um banco de regras que estruturam a árvore 
 
 
 ### Exemplos de Aplicação
-`parent(caos, X).`: Resulta nos filhos de caos. O que aconteceria se no lugar de caos fosse X e no lugar de X algum outro deus?  \\
-`god(X, noite).`: Resulta no nome do deus da noite.
+1. `parent(caos, X).`: Resulta nos filhos de caos. O que aconteceria se no lugar de caos fosse X e no lugar de X algum outro deus? 
+2. `god(X, noite).`: Resulta no nome do deus da noite.
+3. `nameis(caronte, X).`: Resulta na classificação de não divindades na história.
+Teste as outras regras e descubra suas funcionalidades!
 
 ### Exercício Proposto
 Observe o código [Árvore Genealógica Deuses Gregos]([/guides/content/editing-an-existing-page](https://github.com/elc117/t2-2022a-eduardo_gilson/blob/main/%C3%81rvore%20Geneal%C3%B3gica%20Deuses%20Gregos.pl)). Utilize as regras criadas e os exemplos dados anteriormente para responder as seguintes perguntas: 
