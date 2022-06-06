@@ -15,7 +15,7 @@ Observe o código [Árvore Genealógica Deuses Gregos]([/guides/content/editing-
 1. Atena é a deusa do que? 
 2. Atena é filha de quem? 
 3. Atena é descendente de quem? 
-4. Quem são os irmãos de atena?
+4. Quem são os irmãos de Atena?
 5. Irene é uma deusa do olimpo?
 6. Zeus é um deus do olimpo? 
 7. Quais são os deuses primordiais?
