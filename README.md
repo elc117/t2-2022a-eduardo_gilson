@@ -24,3 +24,7 @@ Observe o código [Árvore Genealógica Deuses Gregos]([/guides/content/editing-
 1. Quem são os irmãos do deus que é filho de uma deusa olimpiana com um deus que é ancestral dos pais de Atena? (dica: voce pode partir o problema em partes). 
 2. Caso tenha conseguido resolver o problema o dividindo em partes, agora tente resolvê-lo com apenas um comando.
 
+### Referências
+[Greek Mythology Family Tree](https://www.youtube.com/watch?v=O7F16sC860s&t=160s)  
+[How to learn Prolog by watching Game of Thrones](https://medium.com/free-code-camp/how-to-learn-prolog-by-watching-game-of-thrones-4852ea960017)
+
