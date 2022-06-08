@@ -1,0 +1,1 @@
+lista_de_irmaos(Filho,Lista_de_irmaos),parent(X,Filho),parent(Y,Filho),olimpois(X),ancestral(Y,Pais_atena),parent(Pais_atena,atena).
