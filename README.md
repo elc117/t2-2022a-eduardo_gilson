@@ -10,7 +10,7 @@ O trabalho consiste na criação de um banco de regras que estruturam a árvore 
 Teste as outras regras e descubra suas funcionalidades!
 
 ### Exercício Proposto
-Observe o código [Árvore Genealógica Deuses Gregos]([/guides/content/editing-an-existing-page](https://github.com/elc117/t2-2022a-eduardo_gilson/blob/main/%C3%81rvore%20Geneal%C3%B3gica%20Deuses%20Gregos.pl)). Utilize as regras criadas e os exemplos dados anteriormente para responder as seguintes perguntas: 
+Observe o código [Árvore Genealógica Deuses Gregos]((https://github.com/elc117/t2-2022a-eduardo_gilson/blob/main/%C3%81rvore%20Geneal%C3%B3gica%20Deuses%20Gregos.pl)). Utilize as regras criadas e os exemplos dados anteriormente para responder as seguintes perguntas: 
 
 1. Atena é a deusa do que? 
 2. Atena é filha de quem? 
